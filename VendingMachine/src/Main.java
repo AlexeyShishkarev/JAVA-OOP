@@ -15,8 +15,8 @@ public class Main {
         vendingMachine.addProduct(product2);
         vendingMachine.addProduct(product3);
 
-        System.out.println();
-//        System.out.println(vendingMachine.getProductsList());
+
+          System.out.println(vendingMachine.getProductsList());
 
 
     }
