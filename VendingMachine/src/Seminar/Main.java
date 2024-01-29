@@ -1,6 +1,8 @@
-import product.Bottle;
-import product.Product;
-import vending.VendingMachine;
+package Seminar;
+
+import Seminar.product.Bottle;
+import Seminar.product.Product;
+import Seminar.vending.VendingMachine;
 
 public class Main {
     public static void main(String[] args) {

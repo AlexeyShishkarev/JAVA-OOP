@@ -1,6 +1,6 @@
-package product;
+package Seminar.product;
 
-public class Bottle extends Product{
+public class Bottle extends Product {
     private double volume;
 
     public Bottle(String name, Double price, double volume) {

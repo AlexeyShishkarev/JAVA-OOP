@@ -1,6 +1,6 @@
-package vending;
+package Seminar.vending;
 
-import product.Product;
+import Seminar.product.Product;
 
 import java.util.ArrayList;
 import java.util.List;
