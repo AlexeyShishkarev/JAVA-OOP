@@ -7,7 +7,7 @@ public class Main {
         FamilyTree familyTree = new FamilyTree();
 
         familyTree.addHuman();
+        familyTree.showAllHuman();
 
-        System.out.println(familyTree.showAllHuman());
     }
 }

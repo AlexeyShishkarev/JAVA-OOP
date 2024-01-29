@@ -29,13 +29,13 @@ public class FamilyTree {
      * Печать всего списка людей
      * @return
      */
-     public String showAllHuman(){
+     public void showAllHuman(){
          StringBuilder stringBuilder = new StringBuilder();
          for (Human person : humanList){
              stringBuilder.append(person);
              stringBuilder.append("\n");
          }
-         return stringBuilder.toString();
+         System.out.println(stringBuilder.toString());
      }
 
 }
