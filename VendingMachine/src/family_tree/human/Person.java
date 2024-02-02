@@ -4,13 +4,16 @@ import java.util.Date;
 
 public class Person extends Human{
 
-    Person wife;
-    Person husband;
-    Person mather;
-    Person father;
+    private Person wife;
+    private Person husband;
+    private Person mather;
+    private Person father;
 
 
     public Person(String name, String surname, String patronymic, Date dateOfBirth) {
         super(name, surname, patronymic, dateOfBirth);
     }
+
+
+
 }
