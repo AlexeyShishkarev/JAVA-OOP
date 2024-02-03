@@ -2,15 +2,16 @@ package family_tree.i_o;
 
 import family_tree.human.Person;
 
+import java.io.Serializable;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Scanner;
 
-public class InputPersonInfo {
+public class InputPersonInfo implements Serializable{
 
-    Scanner scanner = new Scanner(System.in);
+
 
     public Person inputPersonInfo (){
         String name = consoleInput("Введите имя: ");
@@ -22,6 +23,7 @@ public class InputPersonInfo {
     }
 
     private String consoleInput(String message){
+        Scanner scanner = new Scanner(System.in);
         System.out.println(message);
         String str = scanner.nextLine();
         return str;

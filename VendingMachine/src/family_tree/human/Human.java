@@ -1,8 +1,9 @@
 package family_tree.human;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class Human {
+public class Human implements Serializable {
     private String name;
     private String surname;
     private String patronymic;
