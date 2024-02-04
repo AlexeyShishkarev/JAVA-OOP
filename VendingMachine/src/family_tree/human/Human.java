@@ -5,7 +5,7 @@ import java.time.LocalDate;
 import java.util.Date;
 import java.util.Locale;
 
-public class Human implements Serializable {
+public class Human {
     private int id;
     private String name;
     private String surname;
@@ -13,7 +13,6 @@ public class Human implements Serializable {
     private LocalDate dateOfBirth;
 
     public Human(String name, String surname, String patronymic, LocalDate dateOfBirth) {
-        id = -1;
         this.name = name;
         this.surname = surname;
         this.patronymic = patronymic;
@@ -24,4 +23,13 @@ public class Human implements Serializable {
     public String toString() {
         return "id: " + id + "\nИмя: " + name + "\nФамилия: " + surname + "\nОтчество: " + patronymic + "\n";
     }
+
+    public int getId (){
+        return id;
+    }
+
+    public void setId (int id){
+        this.id = id;
+    }
+
 }

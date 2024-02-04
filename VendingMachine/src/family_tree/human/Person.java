@@ -12,6 +12,7 @@ public class Person extends Human{
 
     public Person(String name, String surname, String patronymic, LocalDate dateOfBirth) {
         super(name, surname, patronymic, dateOfBirth);
+
     }
 
 

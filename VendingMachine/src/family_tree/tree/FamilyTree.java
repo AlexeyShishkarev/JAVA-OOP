@@ -2,20 +2,18 @@ package family_tree.tree;
 
 import family_tree.human.Human;
 import family_tree.human.Person;
-import family_tree.i_o.FileSaveLoadInTxt;
 //import family_tree.i_o.InputPersonInfo;
 
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class FamilyTree implements Serializable {
+public class FamilyTree {
+    private int personId;
     private List<Human> humanList;
-    private FileSaveLoadInTxt fileSaveLoadInTxt;
 
     public FamilyTree(List<Human> humanList){
         this.humanList = humanList;
-        fileSaveLoadInTxt = new FileSaveLoadInTxt();
     }
 
     public FamilyTree(){
@@ -26,6 +24,7 @@ public class FamilyTree implements Serializable {
      public void addHuman (Person person){
 
         humanList.add(person);
+        person.setId(personId++);
      }
 
     /**
