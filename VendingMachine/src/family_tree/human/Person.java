@@ -1,6 +1,6 @@
 package family_tree.human;
 
-import java.util.Date;
+import java.time.LocalDate;
 
 public class Person extends Human{
 
@@ -10,7 +10,7 @@ public class Person extends Human{
     private Person father;
 
 
-    public Person(String name, String surname, String patronymic, Date dateOfBirth) {
+    public Person(String name, String surname, String patronymic, LocalDate dateOfBirth) {
         super(name, surname, patronymic, dateOfBirth);
     }
 

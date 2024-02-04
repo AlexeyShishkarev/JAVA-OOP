@@ -1,15 +1,19 @@
 package family_tree.human;
 
 import java.io.Serializable;
+import java.time.LocalDate;
 import java.util.Date;
+import java.util.Locale;
 
 public class Human implements Serializable {
+    private int id;
     private String name;
     private String surname;
     private String patronymic;
-    private Date dateOfBirth;
+    private LocalDate dateOfBirth;
 
-    public Human(String name, String surname, String patronymic, Date dateOfBirth) {
+    public Human(String name, String surname, String patronymic, LocalDate dateOfBirth) {
+        id = -1;
         this.name = name;
         this.surname = surname;
         this.patronymic = patronymic;
@@ -18,6 +22,6 @@ public class Human implements Serializable {
 
     @Override
     public String toString() {
-        return "Имя: " + name + "\nФамилия: " + surname + "\nОтчество: " + patronymic + "\n";
+        return "id: " + id + "\nИмя: " + name + "\nФамилия: " + surname + "\nОтчество: " + patronymic + "\n";
     }
 }

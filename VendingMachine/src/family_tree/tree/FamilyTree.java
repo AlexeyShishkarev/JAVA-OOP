@@ -3,7 +3,7 @@ package family_tree.tree;
 import family_tree.human.Human;
 import family_tree.human.Person;
 import family_tree.i_o.FileSaveLoadInTxt;
-import family_tree.i_o.InputPersonInfo;
+//import family_tree.i_o.InputPersonInfo;
 
 import java.io.*;
 import java.util.ArrayList;
@@ -22,11 +22,10 @@ public class FamilyTree implements Serializable {
         this(new ArrayList<>());
     }
 
-    InputPersonInfo inputPersonInfo = new InputPersonInfo();
 
-     public void addHuman (){
+     public void addHuman (Person person){
 
-        humanList.add(inputPersonInfo.inputPersonInfo());
+        humanList.add(person);
      }
 
     /**
@@ -42,9 +41,9 @@ public class FamilyTree implements Serializable {
          System.out.println(stringBuilder.toString());
      }
 
-     public void saveTree() throws IOException {
-         fileSaveLoadInTxt.save(this);
-     }
+//     public void saveTree() throws IOException {
+//         fileSaveLoadInTxt.save(this);
+//     }
 
 
 

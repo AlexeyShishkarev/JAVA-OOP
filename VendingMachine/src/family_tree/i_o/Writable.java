@@ -4,9 +4,10 @@ import family_tree.tree.FamilyTree;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.io.Serializable;
 
 public interface Writable {
-    void save(FamilyTree familyTree) throws IOException;
-    FamilyTree load() throws IOException, ClassNotFoundException;
+    void save(Serializable serializable) throws IOException;
+    Object load() throws IOException, ClassNotFoundException;
 
 }
