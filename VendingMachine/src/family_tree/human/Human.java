@@ -5,7 +5,7 @@ import java.time.LocalDate;
 import java.util.Date;
 import java.util.Locale;
 
-public class Human {
+public class Human implements Serializable{
     private int id;
     private String name;
     private String surname;

@@ -1,6 +1,7 @@
 package family_tree;
 
 import family_tree.human.Person;
+import family_tree.i_o.FileSaveLoad;
 import family_tree.tree.FamilyTree;
 
 import java.io.IOException;
@@ -10,19 +11,19 @@ public class Main {
     public static void main(String[] args) throws IOException, ClassNotFoundException {
         FamilyTree familyTree = new FamilyTree();
 
-        Person person1 = new Person("Алексей", "Шишкарев", "Юрьевич", LocalDate.of(1987,07,12));
-        Person person2 = new Person("Алексей", "Шишкарев", "Юрьевич", LocalDate.of(1987,07,12));
-        Person person3 = new Person("Алексей", "Шишкарев", "Юрьевич", LocalDate.of(1987,07,12));
+        FileSaveLoad fileSaveLoad = new FileSaveLoad();
+        familyTree = (FamilyTree) fileSaveLoad.loadTree();
 
-
-
-        familyTree.addHuman(person1);
-        familyTree.addHuman(person2);
-        familyTree.addHuman(person3);
+//        Person person1 = new Person("Алексей", "Шишкарев", "Юрьевич", LocalDate.of(1987,07,12));
+//        Person person2 = new Person("Алексей", "Шишкарев", "Юрьевич", LocalDate.of(1987,07,12));
+//        Person person3 = new Person("Алексей", "Шишкарев", "Юрьевич", LocalDate.of(1987,07,12));
+//
+//        familyTree.addHuman(person1);
+//        familyTree.addHuman(person2);
+//        familyTree.addHuman(person3);
         familyTree.showAllHuman();
 
 
-
-
+//        fileSaveLoad.saveTree(familyTree);
     }
 }
