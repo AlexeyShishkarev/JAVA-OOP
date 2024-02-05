@@ -9,7 +9,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class FamilyTree implements Serializable{
-    private int personId;
     private List<Human> humanList;
 
     public FamilyTree(List<Human> humanList){
@@ -21,24 +20,24 @@ public class FamilyTree implements Serializable{
     }
 
 
-     public void addHuman (Person person){
+//     public void addHuman (Person person){
+//
+//        humanList.add(person);
+//        person.setId(personId++);
+//     }
 
-        humanList.add(person);
-        person.setId(personId++);
-     }
-
-    /**
-     * Печать всего списка людей
-     * @return
-     */
-     public void showAllHuman(){
-         StringBuilder stringBuilder = new StringBuilder();
-         for (Human person : humanList){
-             stringBuilder.append(person);
-             stringBuilder.append("\n");
-         }
-         System.out.println(stringBuilder.toString());
-     }
+//    /**
+//     * Печать всего списка людей
+//     * @return
+//     */
+//     public void showAllHuman(){
+//         StringBuilder stringBuilder = new StringBuilder();
+//         for (Human person : humanList){
+//             stringBuilder.append(person);
+//             stringBuilder.append("\n");
+//         }
+//         System.out.println(stringBuilder.toString());
+//     }
 
 //     public void saveTree() throws IOException {
 //         fileSaveLoadInTxt.save(this);

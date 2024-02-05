@@ -10,8 +10,8 @@ public class Person extends Human{
     private Person father;
 
 
-    public Person(String name, String surname, String patronymic, LocalDate dateOfBirth) {
-        super(name, surname, patronymic, dateOfBirth);
+    public Person(int id, String name, String surname, String patronymic, LocalDate dateOfBirth) {
+        super(id, name, surname, patronymic, dateOfBirth);
 
     }
 
