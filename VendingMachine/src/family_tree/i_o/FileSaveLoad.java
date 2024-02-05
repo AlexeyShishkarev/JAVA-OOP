@@ -7,21 +7,30 @@ import java.io.*;
 public class FileSaveLoad implements Writable{
 
 
+    /**
+     * Метод для записи в файл с применением try with resurses
+     * @param serializable
+     */
     @Override
     public void saveTree(Serializable serializable) {
-        try{
-            ObjectOutputStream objectOutputStream = new ObjectOutputStream(
-                    new FileOutputStream("Family tree.txt"));
+
+        try (ObjectOutputStream objectOutputStream = new ObjectOutputStream(new FileOutputStream("Family tree.txt")))
+        {
             objectOutputStream.writeObject(serializable);
-            objectOutputStream.close();
         } catch (FileNotFoundException e) {
             throw new RuntimeException(e);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
 
+
+
     }
 
+    /**
+     * Чтение из файла, передаем объект Serializable (Подходит для всех объектов подписанных на данный интерфейс
+     * @return
+     */
     @Override
     public Serializable loadTree() {
 
