@@ -6,7 +6,7 @@ import java.time.Period;
 import java.util.Date;
 import java.util.Locale;
 
-public class Human implements Serializable{
+public class Human implements Serializable, HumanItem{
     private int id;
     private String name;
     private String surname;

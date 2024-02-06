@@ -34,7 +34,7 @@ public class Service {
 
         StringBuilder stringBuilder = new StringBuilder();
         stringBuilder.append("++++++++Список людей++++++++\n");
-        for (Human human : familyTree){
+        for (Object human : familyTree){
             stringBuilder.append(human);
             stringBuilder.append("\n");
         }

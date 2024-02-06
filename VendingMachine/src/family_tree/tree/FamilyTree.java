@@ -9,10 +9,10 @@ import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
 
-public class FamilyTree implements Serializable, Iterable<Human>{
-    private List<Human> humanList;
+public class FamilyTree<E extends HumanItem> implements Serializable, Iterable<E>{
+    private List<E> humanList;
 
-    public FamilyTree(List<Human> humanList){
+    public FamilyTree(List<E> humanList){
         this.humanList = humanList;
     }
 
@@ -21,7 +21,7 @@ public class FamilyTree implements Serializable, Iterable<Human>{
     }
 
 
-     public void addHuman (Person person){
+     public void addHuman (E person){
 
         humanList.add(person);
      }
@@ -32,7 +32,7 @@ public class FamilyTree implements Serializable, Iterable<Human>{
      */
      public void showAllHuman(){
          StringBuilder stringBuilder = new StringBuilder();
-         for (Human person : humanList){
+         for (E person : humanList){
              stringBuilder.append(person);
              stringBuilder.append("\n");
          }
@@ -40,16 +40,16 @@ public class FamilyTree implements Serializable, Iterable<Human>{
      }
 
     @Override
-    public Iterator<Human> iterator() {
-        return new HumanIterator(humanList);
+    public Iterator<E> iterator() {
+        return new HumanIterator<>(humanList);
     }
 
     public void sortByName(){
-        humanList.sort(new HumanComparatorByName());
+        humanList.sort(new HumanComparatorByName<>());
     }
 
     public void sortByAge(){
-         humanList.sort(new HumanComparatorByAge());
+         humanList.sort(new HumanComparatorByAge<>());
     }
 
 
