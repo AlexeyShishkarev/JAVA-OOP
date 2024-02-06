@@ -14,10 +14,15 @@ public class Main {
 
 //    service.addPerson();
 //    service.addPerson();
+//    service.addPerson();
 
     service.loadTree();
+    service.sortByName();
+    service.showAllPerson();
 
-      service.showAllPerson();
+    service.sortByAge();
+    service.showAllPerson();
+
 //    service.saveTree();
 
 

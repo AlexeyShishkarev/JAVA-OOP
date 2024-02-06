@@ -23,7 +23,8 @@ public class Human implements Serializable{
 
     @Override
     public String toString() {
-        return "id: " + id + "\nИмя: " + name + "\nФамилия: " + surname + "\nОтчество: " + patronymic + "\n";
+        return "id: " + id + "\nИмя: " + name + "\nФамилия: " + surname + "\nОтчество: " + patronymic + "\n"
+                + "Дата рождения: " + dateOfBirth + "\n";
     }
 
     public int getId (){

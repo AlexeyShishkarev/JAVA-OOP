@@ -1,6 +1,8 @@
 package family_tree;
 
 import family_tree.human.Human;
+import family_tree.human.HumanComparatorByAge;
+import family_tree.human.HumanComparatorByName;
 import family_tree.human.Person;
 import family_tree.i_o.ConsoleInput;
 import family_tree.i_o.FileSaveLoad;
@@ -50,6 +52,12 @@ public class Service {
         familyTree = (FamilyTree) fileSaveLoad.loadTree();
     }
 
+    public void sortByName(){
+        familyTree.sortByName();
+    }
 
+    public void sortByAge(){
+        familyTree.sortByAge();
+    }
 
 }
