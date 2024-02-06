@@ -25,27 +25,19 @@ public class Service {
 
     public void addPerson(){
         Person person = new Person(id++, consoleInput.name(), consoleInput.surname(), consoleInput.patronymic(), consoleInput.date());
-        humanList.add(person);
+        familyTree.addHuman(person);
     }
 
     public void showAllPerson(){
-        StringBuilder stringBuilder = new StringBuilder();
-        stringBuilder.append("===========Список всех людей: ==============\n");
-        for (Human human : humanList){
-            stringBuilder.append(human);
-            stringBuilder.append("\n");
-        }
-        System.out.println(stringBuilder.toString());
+        familyTree.showAllHuman();
     }
 
-    //TODO переписать service - сейчас он работает чисто с листом, а должен работать с древом и методоами древа
 
     public void saveTree(){
-        fileSaveLoad.saveTree(humanList);
+        fileSaveLoad.saveTree(familyTree);
     }
 
     public void loadTree(){
         familyTree = (FamilyTree) fileSaveLoad.loadTree();
     }
-
 }
