@@ -12,11 +12,12 @@ public class Main {
 
     Service service = new Service();
 
-    service.addPerson();
-    service.addPerson();
+//    service.addPerson();
+//    service.addPerson();
 
     service.loadTree();
-    service.showAllPerson();
+
+      service.showAllPerson();
 //    service.saveTree();
 
 

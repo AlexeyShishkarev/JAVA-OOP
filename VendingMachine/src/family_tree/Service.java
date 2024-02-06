@@ -29,7 +29,16 @@ public class Service {
     }
 
     public void showAllPerson(){
-        familyTree.showAllHuman();
+
+        StringBuilder stringBuilder = new StringBuilder();
+        stringBuilder.append("++++++++Список людей++++++++\n");
+        for (Human human : familyTree){
+            stringBuilder.append(human);
+            stringBuilder.append("\n");
+        }
+
+        System.out.println(stringBuilder.toString());
+//        familyTree.showAllHuman();
     }
 
 
@@ -40,4 +49,7 @@ public class Service {
     public void loadTree(){
         familyTree = (FamilyTree) fileSaveLoad.loadTree();
     }
+
+
+
 }
