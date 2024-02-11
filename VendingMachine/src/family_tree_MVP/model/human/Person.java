@@ -1,8 +1,8 @@
-package family_tree.human;
+package family_tree_MVP.model.human;
 
 import java.time.LocalDate;
 
-public class Person extends Human{
+public class Person extends Human {
 
     private Person wife;
     private Person husband;
