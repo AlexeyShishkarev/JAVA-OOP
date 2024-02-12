@@ -2,8 +2,7 @@ package family_tree_MVP.view;
 
 import family_tree_MVP.model.human.Human;
 import family_tree_MVP.model.human.Person;
-import family_tree_MVP.view.comands.AddPerson;
-import family_tree_MVP.view.comands.Commands;
+import family_tree_MVP.view.comands.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -14,6 +13,9 @@ public class Menu {
     public Menu(ConsoleIO consoleIO) {
         commandsList = new ArrayList<>();
         commandsList.add(new AddPerson(consoleIO));
+        commandsList.add(new ShowAllPerson(consoleIO));
+        commandsList.add(new sortByName(consoleIO));
+        commandsList.add(new Finish(consoleIO));
 
     }
 
