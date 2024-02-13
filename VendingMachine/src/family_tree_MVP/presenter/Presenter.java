@@ -31,8 +31,26 @@ public class Presenter {
         }
     }
 
-    public void finish(){
-
+    public void sortByAge(){
+        if (service.sortByAge()){
+            showAllPerson();
+        }
     }
+
+    public void saveTree(){
+        if (service.saveTree()){
+            view.printAnswer("Дерево успешно сохранено!");
+        }
+    }
+
+    public void loadTree(){
+        if (service.loadTree()){
+            view.printAnswer("Дерево успешно загружено!");
+        } else {
+            view.printAnswer("Нет сохранненых деревьев!");
+        }
+    }
+
+
 
 }

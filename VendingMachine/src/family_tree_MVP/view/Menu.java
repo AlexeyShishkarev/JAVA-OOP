@@ -15,8 +15,15 @@ public class Menu {
         commandsList.add(new AddPerson(consoleIO));
         commandsList.add(new ShowAllPerson(consoleIO));
         commandsList.add(new sortByName(consoleIO));
+        commandsList.add(new SortByAge(consoleIO));
+        commandsList.add(new SaveTree(consoleIO));
+        commandsList.add(new LoadTree(consoleIO));
         commandsList.add(new Finish(consoleIO));
 
+    }
+
+    public int menuSize(){
+        return commandsList.size();
     }
 
     public String printMenu(){

@@ -1,10 +1,8 @@
 package family_tree_MVP.model;
-
-import family_tree.human.Human;
-import family_tree.human.Person;
-import family_tree.i_o.ConsoleInput;
-import family_tree.i_o.FileSaveLoad;
-import family_tree.tree.FamilyTree;
+import family_tree_MVP.model.human.Human;
+import family_tree_MVP.model.human.Person;
+import family_tree_MVP.model.tree.FamilyTree;
+import family_tree_MVP.model.tree.FileSaveLoad;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -14,13 +12,12 @@ public class Service {
     private int id;
     private FamilyTree familyTree;
     private List<Human> humanList;
-    private ConsoleInput consoleInput;
     private FileSaveLoad fileSaveLoad;
+
 
     public Service() {
         humanList = new ArrayList<>();
-        familyTree = new FamilyTree();
-        consoleInput = new ConsoleInput();
+        familyTree = new FamilyTree<>();
         fileSaveLoad = new FileSaveLoad();
     }
 
@@ -38,7 +35,9 @@ public class Service {
             stringBuilder.append(human);
             stringBuilder.append("\n");
         }
-
+        if(familyTree.getHumanListSize() == 0){
+            return "Дерево пусто!";
+        }
         return stringBuilder.toString();
     }
 
@@ -47,6 +46,23 @@ public class Service {
         return true;
     }
 
+    public Boolean sortByAge(){
+        familyTree.sortByAge();
+        return true;
+    }
 
+    public boolean saveTree(){
+        fileSaveLoad.saveTree(familyTree);
+        return true;
+    }
+
+    public boolean loadTree() {
+        if (fileSaveLoad.loadTree() == null){
+            return false;
+        } else {
+            familyTree = (FamilyTree) fileSaveLoad.loadTree();
+            return true;
+        }
+    }
 
 }

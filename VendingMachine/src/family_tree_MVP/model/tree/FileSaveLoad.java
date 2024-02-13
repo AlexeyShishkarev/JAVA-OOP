@@ -1,7 +1,7 @@
 package family_tree_MVP.model.tree;
 
-import family_tree.i_o.Writable;
-import family_tree.tree.FamilyTree;
+
+import com.sun.source.tree.BreakTree;
 
 import java.io.*;
 
@@ -44,9 +44,9 @@ public class FileSaveLoad implements Writable {
             return familyTree;
 
         } catch (FileNotFoundException e) {
-            throw new RuntimeException(e);
+            return null;
         } catch (IOException | ClassNotFoundException e) {
-            throw new RuntimeException(e);
+            return null;
         }
 
     }

@@ -6,6 +6,7 @@ import family_tree_MVP.view.comands.Commands;
 import java.io.IOException;
 import java.time.LocalDate;
 import java.time.format.DateTimeParseException;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class ConsoleIO implements View {
@@ -26,9 +27,10 @@ public class ConsoleIO implements View {
         printAnswer("Добро пожаловать!");
         while (work){
         printAnswer(menu.printMenu());
-        printAnswer("Выберите действие: ");
-        int choice = Integer.parseInt(scanner.nextLine());
-        menu.execute(choice);
+//        printAnswer("Выберите действие: ");
+
+        int choice = consoleInputChoice();
+                menu.execute(choice);
         }
 
     }
@@ -56,6 +58,23 @@ public class ConsoleIO implements View {
         return str;
     }
 
+    public int consoleInputChoice(){
+        int choice;
+        while (true){
+            printAnswer("Введите номер команды: ");
+            try {
+                choice = Integer.parseInt(scanner.nextLine());
+                if(choice > 0 && choice <= menu.menuSize()){
+                    return choice;
+                } else {
+                    printAnswer("Номер команды должен быть больше 0 и не больше " + menu.menuSize());
+                }
+            }catch (NumberFormatException e){
+                printAnswer("Введен неверный номер команды!");
+            }
+        }
+    }
+
     public LocalDate inputDate (){
         boolean work = true;
         LocalDate date;
@@ -74,9 +93,21 @@ public class ConsoleIO implements View {
         presenter.sortByName();
     }
 
+    public void sortByAge(){
+        presenter.sortByAge();
+    }
+
     public void finish(){
         printAnswer("До скорого!");
         work = false;
+    }
+
+    public void saveTree(){
+        presenter.saveTree();
+    }
+
+    public void loadTree(){
+        presenter.loadTree();
     }
 
 }

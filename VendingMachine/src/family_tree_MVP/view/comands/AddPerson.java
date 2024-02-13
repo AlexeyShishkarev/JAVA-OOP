@@ -6,7 +6,7 @@ public class AddPerson extends Commands{
 
 
     public AddPerson(ConsoleIO consoleIO) {
-        super("Добавить студента", consoleIO);
+        super("Добавить человека", consoleIO);
     }
 
 

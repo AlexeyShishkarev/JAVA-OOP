@@ -1,9 +1,6 @@
 package family_tree_MVP.model.tree;
 
-import family_tree.human.HumanComparatorByAge;
-import family_tree.human.HumanComparatorByName;
-import family_tree.human.HumanItem;
-import family_tree.human.HumanIterator;
+import family_tree_MVP.model.human.*;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -51,6 +48,10 @@ public class FamilyTree<E extends HumanItem> implements Serializable, Iterable<E
 
     public void sortByAge(){
          humanList.sort(new HumanComparatorByAge<>());
+    }
+
+    public int getHumanListSize(){
+         return humanList.size();
     }
 
 
