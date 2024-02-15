@@ -110,4 +110,10 @@ public class ConsoleIO implements View {
         presenter.loadTree();
     }
 
+    public void findPerson(){
+        String request = consoleInput("Введите имя человека для поиска: ");
+        presenter.personSearch(request);
+    }
+
+
 }

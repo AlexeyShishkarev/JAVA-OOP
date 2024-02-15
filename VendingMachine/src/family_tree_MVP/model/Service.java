@@ -3,6 +3,7 @@ import family_tree_MVP.model.human.Human;
 import family_tree_MVP.model.human.Person;
 import family_tree_MVP.model.tree.FamilyTree;
 import family_tree_MVP.model.tree.FileSaveLoad;
+import family_tree_MVP.model.tree.Writable;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -11,12 +12,10 @@ import java.util.List;
 public class Service {
     private int id;
     private FamilyTree familyTree;
-    private List<Human> humanList;
     private FileSaveLoad fileSaveLoad;
 
 
     public Service() {
-        humanList = new ArrayList<>();
         familyTree = new FamilyTree<>();
         fileSaveLoad = new FileSaveLoad();
     }
@@ -51,8 +50,9 @@ public class Service {
         return true;
     }
 
-    public boolean saveTree(){
-        fileSaveLoad.saveTree(familyTree);
+    public Boolean saveTree(Writable writable){
+        writable.saveTree(familyTree);
+//        fileSaveLoad.saveTree(familyTree);
         return true;
     }
 
@@ -64,5 +64,15 @@ public class Service {
             return true;
         }
     }
+
+    private int getIdLoad(FamilyTree familyTree){
+        familyTree.
+    }
+
+    public String personSearch(String request){
+        return familyTree.personSearch(request);
+    }
+
+
 
 }

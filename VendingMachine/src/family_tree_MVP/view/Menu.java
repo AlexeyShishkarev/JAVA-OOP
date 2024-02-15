@@ -18,6 +18,7 @@ public class Menu {
         commandsList.add(new SortByAge(consoleIO));
         commandsList.add(new SaveTree(consoleIO));
         commandsList.add(new LoadTree(consoleIO));
+        commandsList.add(new FindPerson(consoleIO));
         commandsList.add(new Finish(consoleIO));
 
     }

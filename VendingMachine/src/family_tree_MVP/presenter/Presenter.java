@@ -1,6 +1,7 @@
 package family_tree_MVP.presenter;
 
 import family_tree_MVP.model.Service;
+import family_tree_MVP.model.tree.FileSaveLoad;
 import family_tree_MVP.view.View;
 
 import java.time.LocalDate;
@@ -8,10 +9,12 @@ import java.time.LocalDate;
 public class Presenter {
     private Service service;
     private View view;
+    private FileSaveLoad fileSaveLoad;
 
     public Presenter(View view) {
         this.view = view;
         service = new Service();
+        fileSaveLoad = new FileSaveLoad();
     }
 
     public void addPerson(String name, String surname, String patronymic, LocalDate dateOfBirth) {
@@ -38,7 +41,7 @@ public class Presenter {
     }
 
     public void saveTree(){
-        if (service.saveTree()){
+        if (service.saveTree(fileSaveLoad)){
             view.printAnswer("Дерево успешно сохранено!");
         }
     }
@@ -49,6 +52,14 @@ public class Presenter {
         } else {
             view.printAnswer("Нет сохранненых деревьев!");
         }
+    }
+
+    public void personSearch(String request){
+       if (service.personSearch(request) == null){
+           view.printAnswer("Человек с именем " + request + " не найден!");
+       } else {
+           view.printAnswer(service.personSearch(request));
+       }
     }
 
 

@@ -54,6 +54,35 @@ public class FamilyTree<E extends HumanItem> implements Serializable, Iterable<E
          return humanList.size();
     }
 
+    public String personSearch (String request){
+         StringBuilder stringBuilder = new StringBuilder();
+             for (E person : humanList){
+             if (person.getName().toLowerCase().contains(request.toLowerCase())){
+                 if(stringBuilder.isEmpty()){
+                     stringBuilder.append("Список людей с именем ").append(request).append(":\n");
+                 }
+                 stringBuilder.append(person);
+                 stringBuilder.append("\n");
+             }
+         }
+         if (stringBuilder.isEmpty()){
+             return null;
+         } else{
+             return stringBuilder.toString();
+         }
+    }
+
+    public List<E> getHumanList(){
+         return humanList;
+    }
+
+    public int getMaxId(List<E> humanList){
+         List<Integer> id = new ArrayList<>();
+         for (E human : humanList){
+
+         }
+    }
+
 
 
 //     public void saveTree() throws IOException {
