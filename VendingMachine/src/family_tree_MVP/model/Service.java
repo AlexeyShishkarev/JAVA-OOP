@@ -61,12 +61,13 @@ public class Service {
             return false;
         } else {
             familyTree = (FamilyTree) fileSaveLoad.loadTree();
+            id = getIdLoad(familyTree) + 1;
             return true;
         }
     }
 
     private int getIdLoad(FamilyTree familyTree){
-        familyTree.
+        return familyTree.getMaxId(familyTree.getHumanList());
     }
 
     public String personSearch(String request){

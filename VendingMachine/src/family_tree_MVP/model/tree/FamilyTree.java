@@ -4,6 +4,7 @@ import family_tree_MVP.model.human.*;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
 
@@ -77,10 +78,11 @@ public class FamilyTree<E extends HumanItem> implements Serializable, Iterable<E
     }
 
     public int getMaxId(List<E> humanList){
-         List<Integer> id = new ArrayList<>();
+         ArrayList<Integer> id = new ArrayList<>();
          for (E human : humanList){
-
+            id.add(human.getId());
          }
+         return Collections.max(id);
     }
 
 
