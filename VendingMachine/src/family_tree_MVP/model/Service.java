@@ -70,10 +70,56 @@ public class Service {
         return familyTree.getMaxId(familyTree.getHumanList());
     }
 
+
+    /**
+     * Получение списка всех id хранящихся в базе
+     * @return
+     */
+    public List getAllId(){
+        List<Integer> idList = new ArrayList<>();
+        List<Person> personList = familyTree.getHumanList();
+        for (Person person : personList){
+            idList.add(person.getId());
+        }
+        return idList;
+            }
+
+
     public String personSearch(String request){
         return familyTree.personSearch(request);
     }
 
 
+    public boolean isCorrectID(int id){
+        if(getAllId().contains(id)){
+            return true;
+        }
+        return false;
+    }
 
+
+    public boolean addSpouse(int idPerson, int idSpouse) {
+        List<Person> personList = familyTree.getHumanList();
+        for (Person person : personList){
+            if (person.getId() == idPerson){
+                person.addSpouse(getPersonFromId(idSpouse));
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public Person getPersonFromId(int id){
+        List<Person> personList = familyTree.getHumanList();
+        for(Person person : personList){
+            if (person.getId() == id){
+                return person;
+            }
+        }
+        return null;
+    }
+
+    public void showSpouse(int idPerson) {
+
+    }
 }

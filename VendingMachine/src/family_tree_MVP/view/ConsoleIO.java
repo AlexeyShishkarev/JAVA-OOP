@@ -7,6 +7,7 @@ import java.io.IOException;
 import java.time.LocalDate;
 import java.time.format.DateTimeParseException;
 import java.util.InputMismatchException;
+import java.util.Iterator;
 import java.util.Scanner;
 
 public class ConsoleIO implements View {
@@ -67,13 +68,27 @@ public class ConsoleIO implements View {
                 if(choice > 0 && choice <= menu.menuSize()){
                     return choice;
                 } else {
-                    printAnswer("Номер команды должен быть больше 0 и не больше " + menu.menuSize());
+                    printAnswer("Номер команды должен быть от 0 до " + menu.menuSize());
                 }
             }catch (NumberFormatException e){
                 printAnswer("Введен неверный номер команды!");
             }
         }
     }
+
+    public int inputId (){
+        int choice;
+        while (true){
+            printAnswer("Введите ID человека: ");
+            try {
+                choice = Integer.parseInt(scanner.nextLine());
+                return choice;
+            } catch (NumberFormatException e){
+                printAnswer("Нужно ввести число! ");
+            }
+        }
+    }
+
 
     public LocalDate inputDate (){
         boolean work = true;
@@ -110,10 +125,38 @@ public class ConsoleIO implements View {
         presenter.loadTree();
     }
 
-    public void findPerson(){
-        String request = consoleInput("Введите имя человека для поиска: ");
+    public void findPerson(String message){
+
+        String request = consoleInput(message);
         presenter.personSearch(request);
     }
+
+    public void addSpouse(){
+        findPerson("Введите имя человека для добавления к нему супруга: ");
+        int idPerson = inputId();
+        if(presenter.isCorrectId(idPerson)){
+            findPerson("Введите имя супруга: ");
+            int idSpouse = inputId();
+            if (idPerson == idSpouse){
+                printAnswer("Быть супругом самого себя может и хорошо, но не надо...");
+            } else {
+                if(presenter.isCorrectId(idSpouse)){
+                    presenter.addSpouse(idPerson, idSpouse);
+
+                } else {
+                    printAnswer("Человека с таким id нет!");
+                }
+
+
+            }
+            }else {
+                printAnswer("Человека с таким id нет!");
+            }
+
+
+    }
+
+
 
 
 }

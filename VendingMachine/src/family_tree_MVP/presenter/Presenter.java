@@ -5,6 +5,7 @@ import family_tree_MVP.model.tree.FileSaveLoad;
 import family_tree_MVP.view.View;
 
 import java.time.LocalDate;
+import java.util.List;
 
 public class Presenter {
     private Service service;
@@ -55,13 +56,35 @@ public class Presenter {
     }
 
     public void personSearch(String request){
-       if (service.personSearch(request) == null){
-           view.printAnswer("Человек с именем " + request + " не найден!");
-       } else {
-           view.printAnswer(service.personSearch(request));
-       }
+            if (service.personSearch(request) == null){
+                view.printAnswer("Человек с именем " + request + " не найден!");
+                personSearch(view.consoleInput("Введите имя заново: "));
+            } else {
+                view.printAnswer(service.personSearch(request));
+            }
+
+        }
+
+
+
+    public void addSpouse(int idPerson, int idSpouse) {
+
+        if (service.addSpouse(idPerson, idSpouse)){
+            view.printAnswer("Супруги успешно добавлены!");
+        } else {
+            view.printAnswer("Супруги не добавлены...");
+        }
+
     }
 
+    public boolean isCorrectId(int id) {
+       if(service.isCorrectID(id)){
+           return true;
+       }
+       return false;
+    }
 
-
+    public void showSpouse(int idPerson) {
+        service.showSpouse(idPerson);
+    }
 }

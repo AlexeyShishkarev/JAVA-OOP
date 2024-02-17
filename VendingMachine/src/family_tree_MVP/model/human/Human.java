@@ -11,6 +11,15 @@ public class Human implements Serializable, HumanItem {
     private String patronymic;
     private LocalDate dateOfBirth;
 
+    /**
+     * Конструктор в который нужно передать начальную информацию о человеке
+     * @param id
+     * @param name
+     * @param surname
+     * @param patronymic
+     * @param dateOfBirth
+     */
+
     public Human(int id, String name, String surname, String patronymic, LocalDate dateOfBirth) {
         this.id = id;
         this.name = name;
@@ -19,6 +28,11 @@ public class Human implements Serializable, HumanItem {
         this.dateOfBirth = dateOfBirth;
     }
 
+
+    /**
+     * Переопределение toString для человека
+     * @return
+     */
     @Override
     public String toString() {
         return "id: " + id + "\nИмя: " + name + "\nФамилия: " + surname + "\nОтчество: " + patronymic + "\n"

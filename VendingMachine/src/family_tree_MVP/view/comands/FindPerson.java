@@ -9,6 +9,6 @@ public class FindPerson extends Commands{
 
     @Override
     public void execute() {
-        getConsoleIO().findPerson();
+        getConsoleIO().findPerson("Введите имя человека для поиска: ");
     }
 }
